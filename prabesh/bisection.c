@@ -2,11 +2,11 @@
 #include <math.h>
 #include <stdlib.h>
 
-int sign(float x) {
-  return (int) (x/fabsf(x));
+int sign(double x) {
+  return (int) (x/fabs(x));
 }
 
-float f(float x) {
+double f(double x) {
   // x^3 - 3x + 1
   return x*x*x - 3*x + 1;
 }
@@ -19,9 +19,9 @@ float f(float x) {
    @return root of f
  */
 
-void bisection(float (*f)(float), float a, float b, int nmax, float E) {
-  float fa = (*f)(a);
-  float fb = (*f)(b);
+void bisection(double (*f)(double), double a, double b, int nmax, double E) {
+  double fa = (*f)(a);
+  double fb = (*f)(b);
 
   if (sign(fa)==sign(fb)) {
     printf("%f, %f\n", fa, fb);
@@ -29,15 +29,15 @@ void bisection(float (*f)(float), float a, float b, int nmax, float E) {
     exit(0);
   }
 
-  float error = b - a;
+  double error = b - a;
   for (int i = 0; i < nmax; i++) {
 
     error = error / 2.0;
-    float c = a + error;
-    float fc = (*f)(c);
+    double c = a + error;
+    double fc = (*f)(c);
     printf("%d\t%.4f\t%.4f\t%.4f\n", i, c, fc, error);
 
-    if (fabsf(error) < E) {
+    if (fabs(error) < E) {
       puts("convergence");
       printf("Root is %.4f\n", c);
       exit(0);
