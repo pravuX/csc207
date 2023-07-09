@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 int main() {
   int n, i, j, xp;
@@ -42,7 +42,7 @@ int main() {
     b[j] = (a[j + 1] - a[j]) / h[j] - h[j] * (c[j + 1] + 2 * c[j]) / 3;
     d[j] = (c[j + 1] - c[j]) / (3 * h[j]);
   }
-  for (i = 0; i < n-1; i++) {
+  for (i = 0; i < n - 1; i++) {
     if (xp <= x[i])
       break;
   }
