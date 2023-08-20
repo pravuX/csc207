@@ -13,11 +13,8 @@ int main() {
   for (k = 0; k < n; k++) {
     pivot = a[k][k];
     for (p = 0; p < n + 1; p++)
-      ;
-    a[k][p] = a[k][p];
-    for (i = 0; i < n; i++)
-      ;
-    {
+      a[k][p] = a[k][p]/pivot;
+    for (i = 0; i < n; i++) {
       term = a[i][k];
       if (k != i)
         for (j = 0; j < n + 1; j++) {

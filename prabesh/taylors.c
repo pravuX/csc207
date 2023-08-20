@@ -18,7 +18,8 @@ int main() {
   sdy = 2 * (x0) + 2 * (y0)*fdy;
   tdy = 2 + 2 * y0 * sdy + 2 * fdy * fdy;
   float h = x - x0;
-  y = y0 + h * fdy + pow(h, 2) * sdy / fact(2) + pow(h, 3) * tdy / fact(3);
+  y = y0 + h * fdy + pow(h, 2) * sdy / fact(2)
+    + pow(h, 3) * tdy / fact(3);
   printf("Functional value at %.3f is %.3f", x, y);
   return 0;
 }
