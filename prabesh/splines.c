@@ -6,8 +6,9 @@ int main() {
   puts("Enter number of points");
   scanf("%d", &n);
   n--;
-  float x[n + 1], a[n + 1], h[n], A[n], l[n + 1], u[n + 1], z[n + 1], c[n + 1],
-      b[n], d[n], val;
+  float x[n + 1], a[n + 1], h[n], A[n],
+        l[n + 1], u[n + 1], z[n + 1], c[n + 1],
+        b[n], d[n], val;
   puts("Enter the points");
   for (i = 0; i < n + 1; ++i)
     scanf("%f", &x[i]);

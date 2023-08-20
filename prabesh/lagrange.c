@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-  float x_data[100], y_data[100], x, interpolating_poly = 0, li;
+  float x_data[100], y_data[100], x, inter_poly = 0, li;
   int i, j, n;
   printf("Enter number of data: ");
   scanf("%d", &n);
@@ -21,7 +21,7 @@ int main() {
         li = li * (x - x_data[j]) / (x_data[i] - x_data[j]);
       }
     }
-    interpolating_poly += li * y_data[i];
+    inter_poly += li * y_data[i];
   }
-  printf("Interpolated value at %.3f is %.3f.", x, interpolating_poly);
+  printf("Interpolated value at %.3f is %.3f.", x, inter_poly);
 }

@@ -20,7 +20,7 @@ int main(void) {
   }
   b = ((n * sxy) - (sx * sy)) / ((n * sx2) - (sx * sx));
   a = (sy / n ) - (b * sx/n);
-  printf("The fitted line is y = %.3f + %.3f\n", a, b);
+  printf("The fitted line is y = %.3fx + %.3f\n", a, b);
   printf("The approx. value at %.3f is %.3f", xp, a * xp + b);
   return 0;
 }
