@@ -11,6 +11,7 @@ int main(void) {
   puts("Enter Dimension of grid.");
   scanf("%f", &h);
   puts("Enter temperatues: tl, tr, tb and tu.");
+  // Constructing coefficient matrix A for interior points
   for (i = 0; i < 4; i++)
     scanf("%f", &t4[i]);
   for (i = 0; i <= n; i++) {
@@ -20,14 +21,13 @@ int main(void) {
         a[i][j] = 1;
     }
   }
-  k = 0;
-  for (i = 1; i < n; i++) {
+  // Constructing RHS vector B for interior points
+  for (k = 0, i = 1; i < n; i++) {
     for (j = 1; j < n; j++) {
       b[k++] = h * h * g(i, j);
     }
   }
-  k = 0;
-  for (i = 0; i < (n - 1); i++) {
+  for (k = 0, i = 0; i < (n - 1); i++) {
     for (j = 0; j < (n - 1); j++) {
       if ((i - 1) == -1)
         b[k] -= t4[0];
